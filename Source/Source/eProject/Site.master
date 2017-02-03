@@ -1,0 +1,298 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+<html class="js flexbox flexboxlegacy canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Photo Printing</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="Styles/Users/images/favicon.png" />
+    <link href="Styles/Users/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="Styles/Users/css/vendor.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="Styles/Users/css/app-base.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="Styles/Users/css/app-settings.scss.css" rel="stylesheet" type="text/css" media="all" />
+
+    <script src="Styles/Users/js/modernizr.min.js" type="text/javascript"></script>
+    <script src="Styles/Users/js/jquery.min.1.11.0.js"></script>
+    <script src="Styles/Users/js/bootstrap.min.js"></script>
+    <script src="Styles/Users/js/api.jquery.js" type="text/javascript"></script>
+    <script src="Styles/Users/js/owl.carousel.min.js" type="text/javascript"></script>
+    <link href="Styles/Users/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="Styles/Users/js/common.js" type="text/javascript"></script>
+    <style>
+        #cartform a {
+            color: green !important;
+        }
+
+        .next, .prev {
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        #owl-demo .item {
+            margin: 5px;
+            color: #FFF;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            text-align: center;
+        }
+    </style>
+
+    <style type="text/css">
+        .giohangn {
+            color: rgb(33, 71, 42) !important;
+            background-color: gray;
+            padding: 10px 20px;
+            font-size: 17px;
+        }
+
+        .related-products {
+            margin-top: 0px !important;
+            padding-top: 0px !important;
+        }
+
+        ul.block-grid.small-block-grid-2.medium-block-grid-3.large-block-grid-4 li {
+            width: 100% !important;
+        }
+
+        .related-products .details {
+            text-align: center;
+        }
+
+        footer#site-footer {
+            background-color: #2c343f;
+        }
+    </style>
+    <style>
+        .card:hover h2 a {
+            color: #74b6c7 !important;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body class="index" id="milk-store">
+    <form runat="server" id="loginForm">
+        <style>
+            .secondary a {
+                color: #fff !important;
+            }
+
+                .secondary a:hover {
+                    color: #fff !important;
+                }
+        </style>
+        <!-- /#notify-bar -->
+
+        <div id="app-wrap">
+            <!-- BEGIN #header-actions -->
+            <div id="header-actions" class="show-for-medium-up">
+                <div class="row padded-h">
+                    <div class="small-12 columns">
+
+                        <div class="table">
+
+                            <div class="cell">
+                                <!-- Tagline -->
+                                <p id="brand-tagline" class="no-margin">
+                                    TEAM 1 DEV
+                                </p>
+                            </div>
+                            <div class="cell">
+                                <p class="no-margin">
+                                    <span class="cart">
+                                        <span class="totals">
+                                            <asp:LinkButton ID="lbtnRegister" runat="server" OnClick="LinkButton2_Click">Register</asp:LinkButton>
+                                        </span>
+                                    </span>
+                                    <!-- Session -->
+                                    <span class="session">
+                                        <asp:LinkButton ID="lbtnLogin" runat="server" OnClick="LinkButton1_Click"> &nbsp;<span> | </span>&nbsp; Login</asp:LinkButton>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="cell">
+                                <p class="no-margin">
+                                    <span class="cart">
+                                        <span class="totals">
+                                            <asp:LinkButton ID="lbtnUserName" runat="server" OnClick="lbtnUserName_Click"
+                                                Enabled="False">Guest</asp:LinkButton>
+                                        </span>
+                                    </span>
+
+                                    <!-- Session -->
+                                    <span class="session">
+                                        <asp:LinkButton ID="lbtnLogout" runat="server" OnClick="lbtnLogout_Click"
+                                            Visible="False"> &nbsp;<span> | </span>&nbsp; Logout</asp:LinkButton>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="cell">
+                                <!-- Search -->
+                                <div id="header-search">
+                                    <input type="text" name="name" class="search-query search replace" placeholder="Input Information">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#header-actions -->
+            <!-- BEGIN #site-headaer -->
+            <header id="site-header">
+                <div class="row padded-h">
+                    <div class="small-12 columns">
+                        <div class="table">
+                            <div id="branding-wrap" class="cell">
+                                <div id="brand">
+                                    <h1 id="brand-primary-image" title="milk store">
+                                        <a href="Default.aspx">
+                                            <span>project team 5</span>
+                                            <img src="Styles/Users/images/logo.jpg" style="width: 230px; height: 60px;" />
+                                        </a>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div id="nav-primary-wrap" class="cell">
+                                <nav class="top-bar" data-topbar="" data-options="mobile_show_parent_link: true">
+                                    <ul class="title-area">
+                                        <li class="name"></li>
+                                        <li class="toggle-topbar">
+                                            <a href="#"><span>Menu</span>&nbsp;<i class="fa fa-bars"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="top-bar-section">
+                                        <ul class="right">
+                                            <li class="nav-item active">
+                                                <a href="Default.aspx">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="Upload.aspx">Upload</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="Album.aspx">Album</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="CustomerPanel.aspx">Profile</a>
+                                            </li>
+                                            <li class="nav-item last">
+                                                <a href="Price.aspx">Price</a>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- /#site-header -->
+
+            <div id="site-body">
+                <div class="row padded-h">
+                    <div class="small-12 columns">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                    </div>
+                </div>
+                <div class="footer-widgets-top"></div>
+            </div>
+
+            <aside class="footer-widgets show-for-medium-up">
+                <div class="row padded">
+                    <div class="large-12 columns">
+
+                        <div class="widgets">
+                            <div class="row">
+
+                                <div class="large-4 columns">
+                                    <section class="widget widget-page-content 01">
+                                        <div class="widget-inner">
+                                            <header class="widget-header">
+                                                <h2>About Us</h2>
+                                            </header>
+                                            <div class="page-content">
+                                                <p><span>About Us here</span></p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+
+                                <div class="large-4 columns">
+                                    <section class="widget widget-articles 01">
+                                        <div class="widget-inner">
+                                            <header class="widget-header">
+                                                <h2>Member list</h2>
+                                            </header>
+                                            <div class="page-content">
+                                                <p><span>Member List here</span></p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="large-4 columns">
+                                    <section class="widget widget-newsletter 01">
+                                        <div class="widget-inner">
+                                            <header class="widget-header">
+                                                <h2>Description</h2>
+                                            </header>
+                                            <p>Description Here</p>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- BEGIN #site-footer -->
+            <footer id="site-footer">
+                <div class="row padded-h">
+                    <div class="small-12 columns">
+                        <div id="payment-methods">
+                        </div>
+                        <div id="payment-methods">
+                            <a href="#" class="payment-method" title="Paypal">
+                                <img src="Styles/Users/images/img-icon-cc-paypal.png" alt="paypal"></a>
+                            <a class="payment-method" title="Google checkout">
+                                <img src="Styles/Users/images/img-icon-cc-google-checkout.png" alt="google-checkout"></a>
+                            <a class="payment-method" title="Visa">
+                                <img src="Styles/Users/images/img-icon-cc-visa.png" alt="visa"></a>
+                            <a class="payment-method" title="Mastercard">
+                                <img src="Styles/Users/images/img-icon-cc-mastercard.png" alt="mastercard"></a>
+                            <a class="payment-method" title="Maestro">
+                                <img src="Styles/Users/images/img-icon-cc-maestro.png" alt="maestro"></a>
+                            <a class="payment-method" title="Cirrus">
+                                <img src="Styles/Users/images/img-icon-cc-cirrus.png" alt="cirrus"></a>
+                            <a class="payment-method" title="American express">
+                                <img src="Styles/Users/images/img-icon-cc-american-express.png" alt="american-express"></a>
+                            <a class="payment-method" title="Discover">
+                                <img src="Styles/Users/images/img-icon-cc-discover.png" alt="discover"></a>
+                        </div>
+                        <div id="fine-print" class="text-color-quiet">
+                            <!-- BEGIN #copyright -->
+                            <div id="copyright">
+                                Copyright © 2015 - All rights reserved.  Photo Printing By Team 1.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+            <!-- /#site-footer -->
+        </div>
+
+        <p>
+            <script src="Styles/Users/js/jquery.min.js" type="text/javascript"></script>
+            <script src="Styles/Users/js/vendor.min.js" type="text/javascript"></script>
+            <script src="Styles/Users/js/haravan_common.js" type="text/javascript"></script>
+            <script src="Styles/Users/js/currencies.js" type="text/javascript"></script>
+            <script src="Styles/Users/js/jquery.currencies.min.js" type="text/javascript"></script>
+            <script src="Styles/Users/js/option_selection.js" type="text/javascript"></script>
+            <script src="Styles/Users/js/api.jquery.js" type="text/javascript"></script>
+            <script src="Styles/Users/js/app-base.min.js" type="text/javascript"></script>
+        </p>
+    </form>
+</body>
+</html>
